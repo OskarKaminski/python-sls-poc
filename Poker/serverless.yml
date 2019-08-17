@@ -1,0 +1,14 @@
+service: poker
+
+provider:
+  name: aws
+  runtime: python3.7
+
+functions:
+  getPlayers:
+    handler: handler.get_players
+    events:
+      - http:
+          path: players
+          method: GET
+          cors: true
